@@ -4,8 +4,8 @@ export default function Footer() {
   return (
     <footer
       className={cn(
-        "flex flex-col pt-16 pb-12",
-        "border-t-slate-200 bg-[#e2e5e9]",
+        "flex min-h-[400px] flex-col pt-16 pb-12",
+        "border-t border-t-slate-200 bg-white",
       )}
     >
       <div />
