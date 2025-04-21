@@ -11,69 +11,43 @@ interface Props {
   className?: string;
 }
 
-const data = [1, 2, 3, 4, 5];
-
 export default function SectionTwo({ className }: Props) {
   const ref = useRef<HTMLDivElement>(null);
 
   function getScrollAmount() {
-    const width = ref.current?.scrollWidth ?? 0;
-    return -(width - window.innerWidth);
+    const height = ref.current?.scrollHeight ?? 0; // scrollHeight를 사용하여 높이 계산
+    return -(height - window.innerHeight) * 2.5; // end 지점을 늘리기 위해 곱하기 1.5
   }
 
   useGSAP(() => {
-    const trigger = ScrollTrigger.create({
+    ScrollTrigger.create({
       trigger: ".section-two",
       scroller: document.body,
-      animation: gsap.to(".card-box", {
-        x: getScrollAmount,
-        duration: 5.5,
-        ease: "none",
-      }),
       scrub: 1,
-      start: "top 8%",
-      end: () => `+=${getScrollAmount() * -1}`,
       pin: true,
       markers: true,
       invalidateOnRefresh: true,
+      end: () => `+=${getScrollAmount() * -1}`,
+      animation: gsap.to(".image-box", {
+        y: getScrollAmount,
+        duration: 5.5,
+        ease: "none",
+      }),
     });
-
-    return () => {
-      trigger.kill();
-    };
   });
 
   return (
-    <Section
-      className={cn(
-        "section-two relative flex items-center overflow-hidden pb-10",
-        className,
-      )}
-    >
-      <div
-        className="card-box z-[1] ml-[calc(35vw)] flex flex-nowrap items-center gap-12 bg-[inherit] pr-[100vw]"
-        ref={ref}
-      >
-        {data.map((num) => (
-          <div
-            className={cn(
-              "h-[50vh] w-[40vw] rounded-2xl bg-amber-500",
-              "cursor-pointer transition-all duration-300",
-              "hover:scale-105",
-            )}
-            key={num}
-          >
-            {num}
-          </div>
-        ))}
+    <Section className={cn("section-two relative", className)}>
+      <div className="image-box absolute flex w-full flex-col" ref={ref}>
+        <div className="relative left-[30vw] mt-[100px] ml-[40px] aspect-square w-[200px] rounded-[8px] bg-amber-100" />
+        <div className="relative left-[50%] mt-[100px] mr-[40px] aspect-square w-[200px] rounded-[8px] bg-amber-300" />
+        <div className="relative left-[30vw] mt-[50px] h-[200px] w-[320px] rounded-[8px] bg-amber-400" />
+        <div className="relative left-[50%] mt-[100px] mr-[40px] aspect-square w-[200px] rounded-[8px] bg-amber-300" />
+        <div className="relative left-[30vw] mt-[50px] h-[200px] w-[320px] rounded-[8px] bg-amber-400" />
       </div>
-      <div className="absolute left-0 h-[50vh] w-full px-30">
-        <p className="relative text-[48px] font-bold">
-          SEOUL MOMENT에서
-          <br />
-          시작하는
-          <br />
-          브랜드 커머스
+      <div className="sticky top-0 flex h-screen w-full items-center justify-center">
+        <p className="text-[35px] font-bold text-white">
+          모든 시작에는 SEOUL MOMENT가 있습니다.
         </p>
       </div>
     </Section>

@@ -1,3 +1,4 @@
+import SectionFive from "./components/SectionFive";
 import SectionFour from "./components/SectionFour";
 import SectionOne from "./components/SectionOne";
 import SectionsWrapper from "./components/SectionsWrapper";
@@ -9,9 +10,10 @@ export default function Home() {
     <div className="relative">
       <SectionsWrapper>
         <SectionOne className="bg-white" />
-        <SectionTwo className="bg-white" />
-        <SectionThree className="bg-black" />
-        <SectionFour className="h-[1200px] bg-black" />
+        <SectionTwo className="bg-black" />
+        <SectionThree className="bg-white" />
+        <SectionFour className="bg-black" />
+        <SectionFive className="h-[1200px] bg-black" />
       </SectionsWrapper>
     </div>
   );

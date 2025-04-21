@@ -37,7 +37,7 @@ export default function SectionOne({ className }: Props) {
   });
 
   const handleMouseEnter = (idx: number) => () => {
-    if (idx !== 0 && idx !== 4) return;
+    if (idx !== 0) return;
 
     setActive(idx);
   };
@@ -71,18 +71,20 @@ export default function SectionOne({ className }: Props) {
               onMouseEnter={handleMouseEnter(idx)}
             >
               <span>{w}</span>
-              <div
-                className={cn(
-                  "video-container",
-                  styleMap.base,
-                  styleMap.hover,
-                  idx > 0 &&
-                    idx < CONTENTS["word3"].length - 1 &&
-                    "w-[150px] scale-100 opacity-100",
-                  idx === active &&
-                    "w-[150px] scale-100 opacity-100 group-hover:w-[150px] group-hover:scale-100 group-hover:opacity-100",
-                )}
-              />
+              {idx < 4 && (
+                <div
+                  className={cn(
+                    "video-container",
+                    styleMap.base,
+                    styleMap.hover,
+                    idx > 0 &&
+                      idx < CONTENTS["word3"].length - 1 &&
+                      "w-[150px] scale-100 opacity-100",
+                    idx === active &&
+                      "w-[150px] scale-100 opacity-100 group-hover:w-[150px] group-hover:scale-100 group-hover:opacity-100",
+                  )}
+                />
+              )}
             </div>
           ))}
         </div>
