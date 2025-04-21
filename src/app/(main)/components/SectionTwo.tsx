@@ -22,8 +22,9 @@ export default function SectionTwo({ className }: Props) {
   }
 
   useGSAP(() => {
-    ScrollTrigger.create({
+    const trigger = ScrollTrigger.create({
       trigger: ".section-two",
+      scroller: document.body,
       animation: gsap.to(".card-box", {
         x: getScrollAmount,
         duration: 5.5,
@@ -36,6 +37,10 @@ export default function SectionTwo({ className }: Props) {
       markers: true,
       invalidateOnRefresh: true,
     });
+
+    return () => {
+      trigger.kill();
+    };
   });
 
   return (
