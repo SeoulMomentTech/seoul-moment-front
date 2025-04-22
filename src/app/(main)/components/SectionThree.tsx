@@ -51,14 +51,14 @@ export default function SectionThree({ className }: Props) {
       )}
     >
       <div
-        className="card-box z-[1] ml-[calc(35vw)] flex flex-nowrap items-center gap-12 bg-[inherit] pr-[100vw]"
+        className="card-box z-[1] ml-[calc(50vw)] flex flex-nowrap items-center gap-12 bg-[inherit] pr-[100vw]"
         ref={ref}
       >
         {data.map((num) => (
           <div
             className={cn(
-              "h-[50vh] w-[40vw] rounded-2xl bg-amber-500",
-              "cursor-pointer transition-all duration-300",
+              "h-[50vh] w-[calc(50vw*0.42)] rounded-2xl bg-amber-500",
+              "cursor-pointer transition-all duration-500",
               "hover:scale-105",
             )}
             key={num}
@@ -67,8 +67,8 @@ export default function SectionThree({ className }: Props) {
           </div>
         ))}
       </div>
-      <div className="absolute left-0 h-[50vh] w-full px-30">
-        <p className="relative text-[48px] font-bold">
+      <div className="absolute left-0 h-[50vh] w-full px-50">
+        <p className="relative text-[40px] font-bold">
           SEOUL MOMENT에서
           <br />
           시작하는

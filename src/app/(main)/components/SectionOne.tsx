@@ -49,7 +49,7 @@ export default function SectionOne({ className }: Props) {
         className,
       )}
     >
-      <div className="contents text-[200px] leading-none font-bold">
+      <div className="contents text-[10rem] leading-none font-bold">
         <div className="flex overflow-hidden text-center">
           {CONTENTS["word1"].split("").map((w, idx) => (
             <span className={styleMap.word} key={`word1-${w}-${idx + 1}`}>
