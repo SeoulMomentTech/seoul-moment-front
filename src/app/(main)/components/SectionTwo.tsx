@@ -1,6 +1,8 @@
 "use client";
 
+import { useRef } from "react";
 import { EffectCoverflow } from "swiper/modules";
+import type { SwiperRef } from "swiper/react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Section from "@/components/ui/section";
 import { cn } from "@/utils/style";
@@ -13,6 +15,15 @@ interface Props {
 }
 
 export default function Section2({ className }: Props) {
+  const swiperRef = useRef<SwiperRef | null>(null);
+
+  const handleClick = () => {
+    if (!swiperRef.current) return;
+
+    const { swiper } = swiperRef.current;
+    swiper.slideTo(swiper.clickedIndex);
+  };
+
   return (
     <Section
       className={cn(
@@ -36,15 +47,17 @@ export default function Section2({ className }: Props) {
         effect="coverflow"
         loop
         modules={[EffectCoverflow]}
+        ref={swiperRef}
         slidesPerView="auto"
       >
-        {[1, 2, 3, 4, 5, 1, 2, 3, 4, 5].map((i, el) => {
+        {[1, 2, 3, 4, 5, 1, 2, 3, 4, 5].map((i, index) => {
           return (
             <SwiperSlide
-              className="relative min-h-[260px]! w-[30vw]! rounded-[12px] border-amber-200 bg-amber-400"
-              key={`l-${el + 1}`}
+              className="relative min-h-[260px]! w-[30vw]! cursor-pointer rounded-[12px] border-amber-200 bg-amber-400"
+              key={`card-${index + 1}`}
+              onClick={handleClick}
             >
-              Slide {el}
+              Slide {index}
             </SwiperSlide>
           );
         })}
