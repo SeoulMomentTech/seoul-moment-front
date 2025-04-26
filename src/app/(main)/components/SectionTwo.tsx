@@ -21,7 +21,7 @@ export default function Section2({ className }: Props) {
     if (!swiperRef.current) return;
 
     const { swiper } = swiperRef.current;
-    swiper.slideToLoop(index);
+    swiper.slideToLoop(index, 750);
   };
 
   return (
@@ -31,7 +31,7 @@ export default function Section2({ className }: Props) {
         className,
       )}
     >
-      <h2 className="text-[50px] font-bold">
+      <h2 className={cn("text-[50px] font-bold", "max-xl:text-[40px]")}>
         물음표를 넘어서면 브랜드가 시작되죠
       </h2>
       <Swiper
@@ -39,13 +39,14 @@ export default function Section2({ className }: Props) {
         className="w-full"
         coverflowEffect={{
           rotate: 0,
-          depth: 150,
+          depth: 200,
           stretch: -45,
           modifier: 1,
           slideShadows: false,
         }}
         effect="coverflow"
         loop
+        loopAdditionalSlides={1}
         modules={[EffectCoverflow]}
         ref={swiperRef}
         slidesPerView="auto"
