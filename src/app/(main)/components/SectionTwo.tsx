@@ -17,11 +17,11 @@ interface Props {
 export default function Section2({ className }: Props) {
   const swiperRef = useRef<SwiperRef | null>(null);
 
-  const handleClick = () => {
+  const handleClick = (index: number) => {
     if (!swiperRef.current) return;
 
     const { swiper } = swiperRef.current;
-    swiper.slideTo(swiper.clickedIndex);
+    swiper.slideToLoop(index);
   };
 
   return (
@@ -55,7 +55,7 @@ export default function Section2({ className }: Props) {
             <SwiperSlide
               className="relative min-h-[260px]! w-[30vw]! cursor-pointer rounded-[12px] border-amber-200 bg-amber-400"
               key={`card-${index + 1}`}
-              onClick={handleClick}
+              onClick={() => handleClick(index)}
             >
               Slide {index}
             </SwiperSlide>
