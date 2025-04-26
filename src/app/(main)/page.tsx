@@ -1,7 +1,7 @@
-import Section2 from "./components/Section2";
 import SectionFive from "./components/SectionFive";
 import SectionFour from "./components/SectionFour";
 import SectionOne from "./components/SectionOne";
+import SectionSix from "./components/SectionSix";
 import SectionsWrapper from "./components/SectionsWrapper";
 import SectionThree from "./components/SectionThree";
 import SectionTwo from "./components/SectionTwo";
@@ -10,12 +10,12 @@ export default function Home() {
   return (
     <div className="relative">
       <SectionsWrapper>
-        <SectionOne className="bg-white" />
-        <Section2 />
-        <SectionTwo className="bg-black" />
-        <SectionThree className="bg-white" />
-        <SectionFour className="bg-black" />
-        <SectionFive className="h-[1200px] bg-black" />
+        <SectionOne className="h-[calc(100vh-72px)] bg-white pb-[72px]" />
+        <SectionTwo />
+        <SectionThree className="bg-black" />
+        <SectionFour className="bg-white" />
+        <SectionFive className="bg-black" />
+        <SectionSix className="h-[1200px] bg-black" />
       </SectionsWrapper>
     </div>
   );
