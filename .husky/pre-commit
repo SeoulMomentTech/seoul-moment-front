@@ -1,1 +1,2 @@
-node lintstagedrc.js
+# .husky/pre-commit
+pnpm lint-staged
