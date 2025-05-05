@@ -10,12 +10,12 @@ export default function Home() {
   return (
     <div className="relative">
       <SectionsWrapper>
-        <SectionOne className="h-[calc(100vh-72px)] bg-white pb-[72px]" />
+        <SectionOne className="h-[calc(100vh-72px)] bg-white" />
         <SectionTwo />
         <SectionThree className="bg-black" />
         <SectionFour className="bg-white" />
         <SectionFive className="bg-black" />
-        <SectionSix className="h-[1200px] bg-black" />
+        <SectionSix className="h-[1200px] bg-black max-md:h-[900px]" />
       </SectionsWrapper>
     </div>
   );

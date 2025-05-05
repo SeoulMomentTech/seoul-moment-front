@@ -7,6 +7,7 @@ export default function Header() {
       className={cn(
         "z-header sticky top-0 left-0 w-full bg-white",
         "flex h-[72px] justify-between px-8",
+        "max-md:h-[48px] max-md:px-4",
       )}
     >
       <div className={"flex items-center"}>

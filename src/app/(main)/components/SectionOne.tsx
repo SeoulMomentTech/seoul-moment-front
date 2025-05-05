@@ -13,8 +13,8 @@ interface Props {
 const CONTENTS = { word1: "START", word2: "YOUR", word3: "BRAND" };
 
 const styleMap = {
-  base: "relative h-[150px] bg-amber-200 rounded-lg mx-1 opacity-0 transition-all duration-700 max-xl:h-[80px]",
-  word: "inline-block",
+  base: "relative h-[150px] bg-amber-200 rounded-lg mx-1 opacity-0 transition-all duration-700 max-xl:h-[80px] max-md:h-[45px] ",
+  word: "inline-block max-md:text-[50px] max-sm:text-[40px]",
   hover: "max-xl:hover:w-[160px] hover:w-[300px]",
 };
 
@@ -46,6 +46,7 @@ export default function SectionOne({ className }: Props) {
     <Section
       className={cn(
         "section-one flex flex-col items-center justify-center",
+        "pb-[72px] max-md:pb-0",
         className,
       )}
     >
@@ -75,7 +76,7 @@ export default function SectionOne({ className }: Props) {
               key={`word3-${w}-${idx + 1}`}
               onMouseEnter={handleMouseEnter(idx)}
             >
-              <span>{w}</span>
+              <span className={styleMap.word}>{w}</span>
               {idx < 4 && (
                 <div
                   className={cn(
@@ -85,9 +86,9 @@ export default function SectionOne({ className }: Props) {
                     (idx == 0 || idx < CONTENTS["word3"].length - 1) && "w-0",
                     idx > 0 &&
                       idx < CONTENTS["word3"].length - 1 &&
-                      "w-[150px] scale-100 opacity-100 max-xl:w-[80px]",
+                      "w-[150px] scale-100 opacity-100 max-xl:w-[80px] max-md:w-[45px]",
                     idx === active &&
-                      "w-[150px] scale-100 opacity-100 hover:opacity-100 max-xl:w-[80px] max-xl:hover:w-[160px]",
+                      "w-[150px] scale-100 opacity-100 hover:opacity-100 max-xl:w-[80px] max-xl:hover:w-[160px] max-md:w-[45px]",
                   )}
                 />
               )}

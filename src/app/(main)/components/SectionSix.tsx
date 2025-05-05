@@ -25,7 +25,7 @@ export default function SectionFive({ className }: Props) {
       scrub: 1,
       start: "-50%",
       end: "-50%",
-      markers: true,
+      markers: false, // true, only for test
       invalidateOnRefresh: true,
     });
   });
@@ -34,11 +34,19 @@ export default function SectionFive({ className }: Props) {
     <Section className={cn("section-five flex flex-col", className)}>
       <div
         className={cn(
-          "content-box h-full w-full rounded-t-[100px] bg-white py-[100px]",
+          "content-box h-full w-full rounded-t-[50px] bg-white py-[100px]",
           "flex flex-col items-center justify-center font-bold",
+          "max-md:py-0",
         )}
       >
-        <p className={cn("text-[10rem]", "max-xl:text-[5rem]")}>SEOUL MOMENT</p>
+        <p
+          className={cn(
+            "text-[10rem]",
+            "max-xl:text-[5rem] max-md:text-[2.5rem]",
+          )}
+        >
+          SEOUL MOMENT
+        </p>
       </div>
     </Section>
   );

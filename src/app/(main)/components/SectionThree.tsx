@@ -11,6 +11,10 @@ interface Props {
   className?: string;
 }
 
+const styleMap = {
+  box: "relative  w-[200px] rounded-[8px]",
+};
+
 export default function SectionTwo({ className }: Props) {
   const ref = useRef<HTMLDivElement>(null);
 
@@ -25,7 +29,7 @@ export default function SectionTwo({ className }: Props) {
       scroller: document.body,
       scrub: 1,
       pin: true,
-      markers: true,
+      markers: false, // true, only for test
       invalidateOnRefresh: true,
       end: () => `+=${getScrollAmount() * -1}`,
       animation: gsap.to(".image-box", {
@@ -37,16 +41,51 @@ export default function SectionTwo({ className }: Props) {
   });
 
   return (
-    <Section className={cn("section-two relative", className)}>
+    <Section className={cn("section-two relative overflow-hidden", className)}>
       <div className="image-box absolute flex w-full flex-col" ref={ref}>
-        <div className="relative left-[30vw] mt-[100px] ml-[40px] aspect-square w-[200px] rounded-[8px] bg-amber-100" />
-        <div className="relative left-[50%] mt-[100px] mr-[40px] aspect-square w-[200px] rounded-[8px] bg-amber-300" />
-        <div className="relative left-[30vw] mt-[50px] h-[200px] w-[320px] rounded-[8px] bg-amber-400" />
-        <div className="relative left-[50%] mt-[100px] mr-[40px] aspect-square w-[200px] rounded-[8px] bg-amber-300" />
-        <div className="relative left-[30vw] mt-[50px] h-[200px] w-[320px] rounded-[8px] bg-amber-400" />
+        <div
+          className={cn(
+            styleMap.box,
+            "left-[30vw] mt-[100px] ml-[40px] aspect-square w-[200px] bg-amber-100",
+            "max-md:left-[20vw] max-md:w-[150px]",
+          )}
+        />
+        <div
+          className={cn(
+            styleMap.box,
+            "left-[50%] mt-[100px] mr-[40px] aspect-square w-[200px] bg-amber-300",
+            "max-md:left-[10vw] max-md:w-[150px]",
+          )}
+        />
+        <div
+          className={cn(
+            styleMap.box,
+            "left-[30vw] mt-[50px] h-[200px] w-[320px] bg-amber-400",
+            "max-md:w-[150px]",
+          )}
+        />
+        <div
+          className={cn(
+            styleMap.box,
+            "left-[50%] mt-[100px] mr-[40px] w-[200px] bg-amber-300",
+            "max-md:left-[30%] max-md:w-[150px]",
+          )}
+        />
+        <div
+          className={cn(
+            styleMap.box,
+            "left-[30vw] mt-[50px] h-[200px] w-[320px] bg-amber-400",
+            "max-md:left-[50vw] max-md:w-[150px]",
+          )}
+        />
       </div>
       <div className="sticky top-0 flex h-screen w-full items-center justify-center">
-        <p className="text-[35px] font-bold text-white">
+        <p
+          className={cn(
+            "text-[35px] font-bold text-white",
+            "max-lg:break-keep max-md:text-center max-md:text-[32px]",
+          )}
+        >
           모든 시작에는 SEOUL MOMENT가 있습니다.
         </p>
       </div>

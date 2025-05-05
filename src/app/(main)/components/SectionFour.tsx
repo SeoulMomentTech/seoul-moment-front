@@ -47,12 +47,18 @@ export default function SectionThree({ className }: Props) {
     <Section
       className={cn(
         "section-three relative flex items-center overflow-hidden pb-10",
+        "max-md:pb-0",
         className,
       )}
     >
       <div className="relative flex h-[520px] w-full bg-[inherit]">
         <div className="absolute left-0 h-[50vh] w-full px-[40px]">
-          <p className="relative mx-auto max-w-[1440px] text-[40px] font-bold">
+          <p
+            className={cn(
+              "relative mx-auto max-w-[1440px] text-[40px] font-bold",
+              "max-md:text-[30px]",
+            )}
+          >
             SEOUL MOMENT에서
             <br />
             시작하는
@@ -61,7 +67,10 @@ export default function SectionThree({ className }: Props) {
           </p>
         </div>
         <div
-          className="card-box z-[1] ml-[calc(50vw)] flex flex-nowrap gap-12 bg-[inherit] pr-[100vw]"
+          className={cn(
+            "card-box z-[1] ml-[calc(50vw)] flex flex-nowrap gap-12 bg-[inherit] pr-[100vw]",
+            "max-md:ml-[32px] max-md:items-center max-md:bg-transparent",
+          )}
           ref={ref}
         >
           {data.map((num) => (
@@ -71,6 +80,7 @@ export default function SectionThree({ className }: Props) {
                 "cursor-pointer transition-all duration-500",
                 "hover:scale-105",
                 "max-xl:aspect-square max-xl:h-[500px] max-xl:w-[50vw]",
+                "max-md:h-[200px]",
               )}
               key={num}
             >
