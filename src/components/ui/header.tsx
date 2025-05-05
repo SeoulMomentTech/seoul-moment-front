@@ -5,7 +5,7 @@ export default function Header() {
   return (
     <header
       className={cn(
-        "sticky top-0 left-0 z-[1000] w-full bg-white",
+        "z-header sticky top-0 left-0 w-full bg-white",
         "flex h-[72px] justify-between px-8",
       )}
     >
