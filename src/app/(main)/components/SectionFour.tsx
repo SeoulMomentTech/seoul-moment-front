@@ -51,7 +51,12 @@ export default function SectionThree({ className }: Props) {
         className,
       )}
     >
-      <div className="relative flex h-[520px] w-full bg-[inherit]">
+      <div
+        className={cn(
+          "relative flex h-[520px] w-full bg-[inherit]",
+          "max-md:h-[600px]",
+        )}
+      >
         <div className="absolute left-0 h-[50vh] w-full px-[40px]">
           <p
             className={cn(
@@ -80,7 +85,7 @@ export default function SectionThree({ className }: Props) {
                 "cursor-pointer transition-all duration-500",
                 "hover:scale-105",
                 "max-xl:aspect-square max-xl:h-[500px] max-xl:w-[50vw]",
-                "max-md:h-[220px]",
+                "max-md:h-[260px]",
               )}
               key={num}
             >

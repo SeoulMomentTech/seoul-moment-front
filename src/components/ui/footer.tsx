@@ -6,7 +6,7 @@ export default function Footer() {
       className={cn(
         "flex min-h-[400px] flex-col pt-16 pb-12",
         "border-t border-t-slate-200 bg-white",
-        "max-md:pt-12 max-md:pb-8",
+        "max-md:min-h-[200px] max-md:pt-12 max-md:pb-8",
       )}
     >
       <div />
