@@ -46,14 +46,14 @@ export default function SectionTwo({ className }: Props) {
         <div
           className={cn(
             styleMap.box,
-            "left-[30vw] mt-[100px] ml-[40px] aspect-square w-[200px] bg-amber-100",
+            "left-[30vw] mt-[100px] ml-[40px] aspect-square bg-amber-100",
             "max-md:left-[20vw] max-md:w-[150px]",
           )}
         />
         <div
           className={cn(
             styleMap.box,
-            "left-[50%] mt-[100px] mr-[40px] aspect-square w-[200px] bg-amber-300",
+            "left-[50%] mt-[100px] mr-[40px] aspect-square bg-amber-300",
             "max-md:left-[10vw] max-md:w-[150px]",
           )}
         />

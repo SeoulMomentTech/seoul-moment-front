@@ -76,15 +76,18 @@ export default function SectionThree({ className }: Props) {
           {data.map((num) => (
             <div
               className={cn(
-                "h-[50vh] w-[calc(50vw*0.42)] rounded-2xl bg-amber-500",
+                "flex h-[40vh] w-[calc(50vw*0.42)] flex-col rounded-2xl bg-amber-500",
                 "cursor-pointer transition-all duration-500",
                 "hover:scale-105",
                 "max-xl:aspect-square max-xl:h-[500px] max-xl:w-[50vw]",
-                "max-md:h-[200px]",
+                "max-md:h-[220px]",
               )}
               key={num}
             >
-              {num}
+              <div className="m-[8px] h-[50%] rounded-[16px] bg-amber-200">
+                Image area
+              </div>
+              <div className="px-[8px]">Content area</div>
             </div>
           ))}
         </div>
