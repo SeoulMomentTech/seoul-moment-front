@@ -45,30 +45,39 @@
   --z-index-modal: 100;
 }
 
-.swiper {
+.company-intro .swiper-slide {
+  width: 100%;
+  opacity: 0 !important;
+}
+
+.company-intro .swiper-slide.swiper-slide-active {
+  opacity: 1 !important;
+}
+
+.section-2 .swiper {
   width: 100%;
   padding-top: 50px;
   padding-bottom: 50px;
 }
 
-.swiper-wrapper {
+.section-2 .swiper-wrapper {
   display: flex;
   align-items: center;
 }
 
-.swiper-slide {
+.section-2 .swiper-slide {
   background-position: center;
   background-size: cover;
   transition: all 0.3s ease;
   height: auto;
 }
 
-.swiper-slide img {
+.section-2 .swiper-slide img {
   display: block;
   width: 100%;
 }
 
-.swiper-slide-active {
+.section-2 .swiper-slide-active {
   @apply min-h-[400px] bg-amber-700 transition-all;
 }
 
