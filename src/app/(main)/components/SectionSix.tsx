@@ -41,11 +41,21 @@ export default function SectionFive({ className }: Props) {
       >
         <p
           className={cn(
-            "text-[10rem]",
-            "max-xl:text-[5rem] max-md:text-[2.5rem]",
+            "text-[10rem] leading-[10rem]",
+            "max-xl:text-[5rem] max-xl:leading-[5rem]",
+            "max-md:text-[2.5rem] max-md:leading-[2.5rem]",
           )}
         >
-          SEOUL MOMENT
+          MAKE YOUR
+        </p>
+        <p
+          className={cn(
+            "text-[10rem] leading-[10rem]",
+            "max-xl:text-[5rem] max-xl:leading-[5rem]",
+            "max-md:text-[2.5rem] max-md:leading-[2.5rem]",
+          )}
+        >
+          SEOUL HERE
         </p>
       </div>
     </Section>

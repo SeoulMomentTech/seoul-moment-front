@@ -18,7 +18,7 @@ const CONTENTS = {
 };
 
 const styleMap = {
-  base: "relative h-[150px] rounded-lg opacity-100 transition-all duration-700 max-xl:h-[80px] max-md:h-[45px] ",
+  base: "relative h-[150px] rounded-lg opacity-100 transition-all duration-700 max-xl:h-[80px] max-md:h-[45px] max-md:hidden ",
   word: "inline-block max-md:text-[50px] max-sm:text-[40px]",
   // hover: "max-xl:hover:w-[160px] hover:w-[300px]",
 };
@@ -67,7 +67,7 @@ export default function HeroSlogan({ className }: Props) {
               {w}
             </span>
           ))}
-          <span className="w-[42px]" />
+          <span className={cn("w-[42px]", "max-md:w-[20px]")} />
           {CONTENTS["word2"].split("").map((w, idx) => (
             <span className={styleMap.word} key={`word2-${w}-${idx + 1}`}>
               {w}
@@ -96,7 +96,7 @@ export default function HeroSlogan({ className }: Props) {
               )}
             </div>
           ))}
-          <span className="w-[42px]" />
+          <span className={cn("w-[42px]", "max-md:w-[20px]")} />
           {CONTENTS["word4"].split("").map((w, idx) => (
             <div
               className={cn("flex items-center")}

@@ -74,7 +74,12 @@ export default function Landing() {
         )}
         ref={titleRef}
       >
-        <h3 className="text-[150px] whitespace-pre">
+        <h3
+          className={cn(
+            "text-[150px] whitespace-pre",
+            "max-xl:text-[100px] max-md:text-[80px] max-sm:text-[50px]",
+          )}
+        >
           <b>Seoul Moment</b>
         </h3>
       </div>
