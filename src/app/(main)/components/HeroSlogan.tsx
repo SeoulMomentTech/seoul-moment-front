@@ -10,16 +10,21 @@ interface Props {
   className?: string;
 }
 
-const CONTENTS = { word1: "START", word2: "YOUR", word3: "BRAND" };
-
-const styleMap = {
-  base: "relative h-[150px] bg-amber-200 rounded-lg mx-1 opacity-0 transition-all duration-700 max-xl:h-[80px] max-md:h-[45px] ",
-  word: "inline-block max-md:text-[50px] max-sm:text-[40px]",
-  hover: "max-xl:hover:w-[160px] hover:w-[300px]",
+const CONTENTS = {
+  word1: "MAKE",
+  word2: "YOUR",
+  word3: "SEOUL",
+  word4: "HERE",
 };
 
-export default function SectionOne({ className }: Props) {
-  const [active, setActive] = useState(0);
+const styleMap = {
+  base: "relative h-[150px] rounded-lg opacity-100 transition-all duration-700 max-xl:h-[80px] max-md:h-[45px] ",
+  word: "inline-block max-md:text-[50px] max-sm:text-[40px]",
+  // hover: "max-xl:hover:w-[160px] hover:w-[300px]",
+};
+
+export default function HeroSlogan({ className }: Props) {
+  const [active, setActive] = useState<number | null>(null);
 
   useGSAP(() => {
     gsap.timeline().from(".section-one div", {
@@ -37,7 +42,7 @@ export default function SectionOne({ className }: Props) {
   });
 
   const handleMouseEnter = (idx: number) => () => {
-    if (idx !== 0) return;
+    if (idx !== 0 && idx !== 3) return;
 
     setActive(idx);
   };
@@ -69,6 +74,7 @@ export default function SectionOne({ className }: Props) {
             </span>
           ))}
         </div>
+        <div className="h-[12px]" />
         <div className="flex items-center overflow-hidden text-center">
           {CONTENTS["word3"].split("").map((w, idx) => (
             <div
@@ -77,21 +83,27 @@ export default function SectionOne({ className }: Props) {
               onMouseEnter={handleMouseEnter(idx)}
             >
               <span className={styleMap.word}>{w}</span>
-              {idx < 4 && (
+              {(idx === 0 || idx === 3) && (
                 <div
                   className={cn(
                     "video-container",
                     styleMap.base,
-                    styleMap.hover,
-                    (idx == 0 || idx < CONTENTS["word3"].length - 1) && "w-0",
-                    idx > 0 &&
-                      idx < CONTENTS["word3"].length - 1 &&
-                      "w-[150px] scale-100 opacity-100 max-xl:w-[80px] max-md:w-[45px]",
+                    (idx == 0 || idx === 3) && "w-0",
                     idx === active &&
-                      "w-[150px] scale-100 opacity-100 hover:opacity-100 max-xl:w-[80px] max-xl:hover:w-[160px] max-md:w-[45px]",
+                      "mx-1 w-[150px] scale-100 bg-amber-200 hover:opacity-100 max-xl:w-[80px] max-xl:hover:w-[160px] max-md:w-[45px]",
                   )}
                 />
               )}
+            </div>
+          ))}
+          <span className="w-[42px]" />
+          {CONTENTS["word4"].split("").map((w, idx) => (
+            <div
+              className={cn("flex items-center")}
+              key={`word3-${w}-${idx + 1}`}
+              onMouseEnter={handleMouseEnter(idx)}
+            >
+              <span className={styleMap.word}>{w}</span>
             </div>
           ))}
         </div>
