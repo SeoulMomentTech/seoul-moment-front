@@ -13,7 +13,7 @@ interface Props {
 
 const data = [1, 2, 3, 4, 5];
 
-export default function SectionThree({ className }: Props) {
+export default function CardSlider({ className }: Props) {
   const ref = useRef<HTMLDivElement>(null);
 
   function getScrollAmount() {
@@ -46,7 +46,8 @@ export default function SectionThree({ className }: Props) {
   return (
     <Section
       className={cn(
-        "section-three relative flex items-center overflow-hidden pb-10",
+        "section-three relative overflow-hidden pb-10",
+        "flex items-center border-t border-t-slate-200",
         "max-md:pb-0",
         className,
       )}
@@ -60,8 +61,8 @@ export default function SectionThree({ className }: Props) {
         <div className="absolute left-0 h-[50vh] w-full px-[40px]">
           <p
             className={cn(
-              "relative mx-auto max-w-[1440px] text-[40px] font-bold",
-              "max-md:text-[30px]",
+              "relative mx-auto max-w-[1440px] text-[50px] font-bold",
+              "max-lg:text-[36px] max-md:text-[30px]",
             )}
           >
             SEOUL MOMENT에서

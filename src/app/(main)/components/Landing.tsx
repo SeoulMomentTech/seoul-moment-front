@@ -15,27 +15,15 @@ export default function Landing() {
 
   useGSAP(
     () => {
-      const tl = gsap.timeline({
+      gsap.to(titleRef.current, {
+        color: "#ffffff",
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top top",
+          start: "top 48%",
           end: "bottom 200%",
           scrub: true,
-          markers: true,
         },
       });
-
-      tl.to(sectionRef.current, {
-        backgroundColor: "#000000",
-        ease: "none",
-      }).to(
-        titleRef.current,
-        {
-          color: "#ffffff",
-          ease: "none",
-        },
-        "<", // 동시에 시작
-      );
 
       gsap.to(titleRef.current, {
         display: "none",
@@ -52,10 +40,7 @@ export default function Landing() {
   );
 
   return (
-    <Section
-      className="relative h-auto min-h-screen transition-all will-change-[background-color]"
-      ref={sectionRef}
-    >
+    <Section className="relative h-auto min-h-screen transition-all will-change-[background-color]">
       <div
         className={cn(
           "fixed top-0 right-[50%] left-[50%] z-10",
@@ -72,8 +57,8 @@ export default function Landing() {
           <b>Seoul Moment</b>
         </h3>
       </div>
-      <Section />
-      <Section />
+      <Section className="bg-white" />
+      <Section className="bg-black" ref={sectionRef} />
     </Section>
   );
 }
