@@ -27,7 +27,7 @@ export default function Section2({ className }: Props) {
   return (
     <Section
       className={cn(
-        "section-2 relative flex flex-col items-center justify-center gap-[52px] py-15",
+        "section-2 relative mx-auto flex max-w-[2200px] flex-col items-center justify-center gap-[52px] py-15",
         "max-lg:py-0",
         className,
       )}
@@ -63,13 +63,20 @@ export default function Section2({ className }: Props) {
           return (
             <SwiperSlide
               className={cn(
-                "relative min-h-[260px]! w-[30vw]! cursor-pointer rounded-[12px] border-amber-200 bg-amber-400",
+                "mx-[10px] min-h-[400px]! w-[30vw]! rounded-[12px]",
                 "max-md:min-h-[200px]! max-md:w-[40vw]!",
               )}
               key={`card-${index + 1}`}
               onClick={() => handleClick(index)}
             >
-              Slide {index}
+              <div
+                className={cn(
+                  "relative min-h-[260px]! w-[30vw]! cursor-pointer rounded-[12px] border-amber-200 bg-amber-400",
+                  "max-md:min-h-[200px]! max-md:w-[40vw]!",
+                )}
+              >
+                Slide {index}
+              </div>
             </SwiperSlide>
           );
         })}

@@ -38,23 +38,12 @@ export default function Landing() {
       );
 
       gsap.to(titleRef.current, {
-        opacity: 0,
-        ease: "power1.out",
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top top",
-          end: "bottom 30%",
-          scrub: true,
-        },
-      });
-
-      gsap.to(titleRef.current, {
         display: "none",
         ease: "power1.out",
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top top",
-          end: "bottom 0%",
+          end: "bottom 40%",
           scrub: true,
         },
       });

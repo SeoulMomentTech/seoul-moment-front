@@ -53,6 +53,9 @@ function CompanyIntro() {
           </p>
         </div>
         <Swiper
+          autoplay={{
+            delay: 5000,
+          }}
           className="w-full"
           effect="fade"
           loop
