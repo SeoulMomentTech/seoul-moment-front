@@ -47,7 +47,7 @@ export default function CardSlider({ className }: Props) {
     <Section
       className={cn(
         "section-three relative overflow-hidden pb-10",
-        "flex items-center border-t border-t-slate-200",
+        "flex items-center",
         "max-md:pb-0",
         className,
       )}
