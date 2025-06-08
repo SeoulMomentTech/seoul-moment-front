@@ -61,8 +61,8 @@ export default function CardSlider({ className }: Props) {
         <div className="absolute left-0 h-[50vh] w-full px-[40px]">
           <p
             className={cn(
-              "relative mx-auto max-w-[1440px] text-[50px] font-bold",
-              "max-lg:text-[36px] max-md:text-[30px]",
+              "relative mx-auto max-w-[2000px] text-[50px] font-bold",
+              "max-xl:text-[40px] max-lg:text-[36px] max-md:text-[30px]",
             )}
           >
             SEOUL MOMENT에서
@@ -74,7 +74,8 @@ export default function CardSlider({ className }: Props) {
         </div>
         <div
           className={cn(
-            "card-box z-[1] ml-[calc(50vw)] flex flex-nowrap gap-12 bg-[inherit] pr-[100vw]",
+            "card-box z-[1] ml-[35vw] flex flex-nowrap gap-12 bg-[inherit] pr-[100vw]",
+            "max-xl:ml-[50vw]",
             "max-md:ml-[32px] max-md:items-center max-md:bg-transparent",
           )}
           ref={ref}

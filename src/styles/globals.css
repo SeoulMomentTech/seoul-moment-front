@@ -88,6 +88,10 @@
   @apply scale-y-150 transition-all duration-300;
 }
 
+.info-box .swiper-pagination-bullet {
+  @apply bg-slate-200;
+}
+
 :root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);
