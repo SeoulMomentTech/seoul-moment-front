@@ -14,7 +14,7 @@ interface Props {
   className?: string;
 }
 
-export default function Section2({ className }: Props) {
+export default function BrandCoverflow({ className }: Props) {
   const swiperRef = useRef<SwiperRef | null>(null);
 
   const handleClick = (index: number) => {
@@ -28,7 +28,7 @@ export default function Section2({ className }: Props) {
     <Section
       className={cn(
         "section-2 relative mx-auto flex max-w-[2200px] flex-col items-center justify-center gap-[52px] py-15",
-        "max-lg:py-0",
+
         className,
       )}
     >

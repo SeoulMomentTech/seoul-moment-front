@@ -21,7 +21,7 @@ export default function InfoBox({
       id="link1"
     >
       <div className="flex flex-col gap-[20px]">
-        <h2 className="text-[40px] max-lg:text-[36px]">
+        <h2 className="text-[40px] max-lg:text-[36px] max-md:text-[30px]">
           <b>{title}</b>
         </h2>
         <div>
