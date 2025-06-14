@@ -13,8 +13,6 @@ interface ImageSliderProps {
 export default function ImageSlider({ images }: ImageSliderProps) {
   const id = useId();
 
-  console.log(images);
-
   return (
     <Swiper
       centeredSlides
