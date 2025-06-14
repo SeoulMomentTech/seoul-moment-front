@@ -18,16 +18,27 @@ export default function Information() {
       )}
     >
       <SideBar />
+
       <div className="flex flex-1 flex-col gap-[120px]">
         <InfoBox
-          description="상품이 일상에서 어떤 모습으로 사용될 수 있을지 고객의 일상에서 더 나은 선택지는 무엇인지 가장 깊게 스토리텔링하는 커머스 플랫폼"
-          subTitle="‘나의 일상에 이 상품이 있다면?’"
-          title="고객의 더 나은 선택1"
+          description="한국의 트렌디 패션, 뷰티, 라이프스타일을 더욱 빠르게 즐길 수 있는 글로벌 감성 플렛폼."
+          images={[
+            "https://res.cloudinary.com/dumqfde1s/image/upload/v1745226610/samples/look-up.jpg",
+            "https://res.cloudinary.com/dumqfde1s/image/upload/v1745226609/samples/balloons.jpg",
+            "https://res.cloudinary.com/dumqfde1s/image/upload/v1745226602/samples/landscapes/girl-urban-view.jpg",
+          ]}
+          subTitle={`"서울의 느낌을 그대로"`}
+          title="더 빠른 트렌드와 더 나은 서비스"
         />
         <InfoBox
-          description="상품이 일상에서 어떤 모습으로 사용될 수 있을지 고객의 일상에서 더 나은 선택지는 무엇인지 가장 깊게 스토리텔링하는 커머스 플랫폼"
-          subTitle="‘나의 일상에 이 상품이 있다면?’"
-          title="고객의 더 나은 선택2"
+          description="남을 따라가는것이 아닌, 일상 속 자신만의 트렌드를 만들어가는 스토리텔링 커머스 플렛폼."
+          images={[
+            "https://res.cloudinary.com/dumqfde1s/image/upload/v1745226610/samples/look-up.jpg",
+            "https://res.cloudinary.com/dumqfde1s/image/upload/v1745226609/samples/balloons.jpg",
+            "https://res.cloudinary.com/dumqfde1s/image/upload/v1745226602/samples/landscapes/girl-urban-view.jpg",
+          ]}
+          subTitle={`“나에게 필요한, 나를 위한 상품들”`}
+          title="다양한 느낌과 다양한 상품"
         />
       </div>
     </Section>

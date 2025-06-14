@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useRef } from "react";
 import { EffectCoverflow } from "swiper/modules";
 import type { SwiperRef } from "swiper/react";
@@ -13,6 +14,14 @@ import "swiper/css/effect-coverflow";
 interface Props {
   className?: string;
 }
+
+const images = [
+  "https://res.cloudinary.com/dumqfde1s/image/upload/v1745226611/cld-sample-4.jpg",
+  "https://res.cloudinary.com/dumqfde1s/image/upload/v1745226611/cld-sample-5.jpg",
+  "https://res.cloudinary.com/dumqfde1s/image/upload/v1745226611/cld-sample-3.jpg",
+  "https://res.cloudinary.com/dumqfde1s/image/upload/v1745226611/cld-sample.jpg",
+  "https://res.cloudinary.com/dumqfde1s/image/upload/v1745226611/samples/coffee.jpg",
+];
 
 export default function BrandCoverflow({ className }: Props) {
   const swiperRef = useRef<SwiperRef | null>(null);
@@ -59,11 +68,11 @@ export default function BrandCoverflow({ className }: Props) {
         ref={swiperRef}
         slidesPerView="auto"
       >
-        {[1, 2, 3, 4, 5, 1, 2, 3, 4, 5].map((i, index) => {
+        {[...images, ...images].map((img, index) => {
           return (
             <SwiperSlide
               className={cn(
-                "mx-[10px] min-h-[400px]! w-[30vw]! rounded-[12px]",
+                "mx-[10px] min-h-[400px]! w-[30vw]!",
                 "max-md:min-h-[200px]! max-md:w-[40vw]!",
               )}
               key={`card-${index + 1}`}
@@ -71,11 +80,17 @@ export default function BrandCoverflow({ className }: Props) {
             >
               <div
                 className={cn(
-                  "relative min-h-[260px]! w-[30vw]! cursor-pointer rounded-[12px] border-amber-200 bg-amber-400",
+                  "relative min-h-[260px]! w-[30vw]! cursor-pointer",
                   "max-md:min-h-[200px]! max-md:w-[40vw]!",
                 )}
               >
-                Slide {index}
+                <Image
+                  alt=""
+                  className="rounded-[18px]"
+                  fill
+                  objectFit="cover"
+                  src={img}
+                />
               </div>
             </SwiperSlide>
           );

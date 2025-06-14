@@ -2,6 +2,7 @@
 
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import Image from "next/image";
 import { useState } from "react";
 import Section from "@/components/ui/section";
 import { cn } from "@/utils/style";
@@ -18,13 +19,13 @@ const CONTENTS = {
 };
 
 const styleMap = {
-  base: "relative h-[150px] rounded-lg opacity-100 transition-all duration-700 max-xl:h-[80px] max-md:h-[45px] max-md:hidden ",
+  base: "overflow-hidden relative h-[150px] rounded-lg opacity-100 transition-all duration-700 max-xl:h-[80px] max-md:h-[45px] max-md:hidden ",
   word: "inline-block max-md:text-[50px] max-sm:text-[40px]",
   // hover: "max-xl:hover:w-[160px] hover:w-[300px]",
 };
 
 export default function HeroSlogan({ className }: Props) {
-  const [active, setActive] = useState<number | null>(null);
+  const [active, setActive] = useState<string | null>(null);
 
   useGSAP(() => {
     gsap.timeline().from(".section-one div", {
@@ -41,10 +42,8 @@ export default function HeroSlogan({ className }: Props) {
     });
   });
 
-  const handleMouseEnter = (idx: number) => () => {
-    if (idx !== 0 && idx !== 3) return;
-
-    setActive(idx);
+  const handleMouseEnter = (name: string) => () => {
+    setActive(name);
   };
 
   return (
@@ -63,15 +62,61 @@ export default function HeroSlogan({ className }: Props) {
       >
         <div className="flex overflow-hidden text-center">
           {CONTENTS["word1"].split("").map((w, idx) => (
-            <span className={styleMap.word} key={`word1-${w}-${idx + 1}`}>
-              {w}
-            </span>
+            <div
+              className={cn("flex items-center")}
+              key={`word1-${w}-${idx + 1}`}
+              onMouseEnter={handleMouseEnter("make")}
+            >
+              <span className={styleMap.word} key={`word1-${w}-${idx + 1}`}>
+                {w}
+              </span>
+              {idx === 1 && (
+                <div
+                  className={cn(
+                    "video-container",
+                    styleMap.base,
+                    idx === 1 && "w-0 scale-0",
+                    active === "make" &&
+                      "mx-1 w-[150px] scale-100 bg-amber-200 hover:opacity-100 max-xl:w-[80px] max-xl:hover:w-[160px] max-md:w-[45px]",
+                  )}
+                >
+                  <Image
+                    alt=""
+                    fill
+                    src="https://res.cloudinary.com/dumqfde1s/image/upload/v1745226611/samples/dessert-on-a-plate.jpg"
+                  />
+                </div>
+              )}
+            </div>
           ))}
           <span className={cn("w-[42px]", "max-md:w-[20px]")} />
           {CONTENTS["word2"].split("").map((w, idx) => (
-            <span className={styleMap.word} key={`word2-${w}-${idx + 1}`}>
-              {w}
-            </span>
+            <div
+              className={cn("flex items-center")}
+              key={`word2-${w}-${idx + 1}`}
+              onMouseEnter={handleMouseEnter("your")}
+            >
+              <span className={styleMap.word} key={`word2-${w}-${idx + 1}`}>
+                {w}
+              </span>
+              {idx === 1 && (
+                <div
+                  className={cn(
+                    "video-container",
+                    styleMap.base,
+                    idx === 1 && "w-0 scale-0",
+                    active === "your" &&
+                      "mx-1 w-[150px] scale-100 bg-amber-200 hover:opacity-100 max-xl:w-[80px] max-xl:hover:w-[160px] max-md:w-[45px]",
+                  )}
+                >
+                  <Image
+                    alt=""
+                    fill
+                    src="https://res.cloudinary.com/dumqfde1s/image/upload/v1745226610/samples/man-on-a-escalator.jpg"
+                  />
+                </div>
+              )}
+            </div>
           ))}
         </div>
         <div className="h-[12px]" />
@@ -80,20 +125,8 @@ export default function HeroSlogan({ className }: Props) {
             <div
               className={cn("flex items-center")}
               key={`word3-${w}-${idx + 1}`}
-              onMouseEnter={handleMouseEnter(idx)}
             >
               <span className={styleMap.word}>{w}</span>
-              {(idx === 0 || idx === 3) && (
-                <div
-                  className={cn(
-                    "video-container",
-                    styleMap.base,
-                    (idx == 0 || idx === 3) && "w-0",
-                    idx === active &&
-                      "mx-1 w-[150px] scale-100 bg-amber-200 hover:opacity-100 max-xl:w-[80px] max-xl:hover:w-[160px] max-md:w-[45px]",
-                  )}
-                />
-              )}
             </div>
           ))}
           <span className={cn("w-[42px]", "max-md:w-[20px]")} />
@@ -101,9 +134,26 @@ export default function HeroSlogan({ className }: Props) {
             <div
               className={cn("flex items-center")}
               key={`word3-${w}-${idx + 1}`}
-              onMouseEnter={handleMouseEnter(idx)}
+              onMouseEnter={handleMouseEnter("here")}
             >
               <span className={styleMap.word}>{w}</span>
+              {idx === 1 && (
+                <div
+                  className={cn(
+                    "video-container",
+                    styleMap.base,
+                    idx === 1 && "w-0 scale-0",
+                    active === "here" &&
+                      "mx-1 w-[150px] scale-100 bg-amber-200 hover:opacity-100 max-xl:w-[80px] max-xl:hover:w-[160px] max-md:w-[45px]",
+                  )}
+                >
+                  <Image
+                    alt=""
+                    fill
+                    src="https://res.cloudinary.com/dumqfde1s/image/upload/v1745226610/samples/chair-and-coffee-table.jpg"
+                  />
+                </div>
+              )}
             </div>
           ))}
         </div>

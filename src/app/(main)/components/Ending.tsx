@@ -18,7 +18,7 @@ export default function Ending({ className }: Props) {
       >
         <div
           className={cn(
-            "content-box h-full w-full bg-white py-[100px]",
+            "content-box h-full w-full bg-white",
             "flex flex-col items-center justify-center font-bold",
             "max-md:py-0",
           )}

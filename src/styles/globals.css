@@ -164,11 +164,11 @@ body {
 }
 
 .section-2 .swiper-slide-active {
-  @apply min-h-[400px] transition-all;
+  @apply min-h-[400px] scale-110 transition-all;
 }
 
 .section-2 .swiper-slide-active > div {
-  @apply scale-y-150 transition-all duration-300;
+  @apply scale-125 transition-all duration-300;
 }
 
 .info-box .swiper-pagination-bullet {

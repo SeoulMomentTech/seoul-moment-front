@@ -1,10 +1,20 @@
+import Image from "next/image";
+import { useId } from "react";
 import { Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
 import "swiper/css/pagination";
 
-export default function ImageSlider() {
+interface ImageSliderProps {
+  images: string[];
+}
+
+export default function ImageSlider({ images }: ImageSliderProps) {
+  const id = useId();
+
+  console.log(images);
+
   return (
     <Swiper
       centeredSlides
@@ -15,9 +25,11 @@ export default function ImageSlider() {
       pagination={true}
       slidesPerView="auto"
     >
-      <SwiperSlide className="h-full bg-black text-white">Slide 1</SwiperSlide>
-      <SwiperSlide className="h-full bg-black text-white">Slide 2</SwiperSlide>
-      <SwiperSlide className="h-full bg-black text-white">Slide 3</SwiperSlide>
+      {images.map((img) => (
+        <SwiperSlide className="h-full text-white" key={`${id}-${img}`}>
+          <Image alt="" fill src={img} />
+        </SwiperSlide>
+      ))}
     </Swiper>
   );
 }
