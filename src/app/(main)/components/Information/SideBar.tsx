@@ -4,6 +4,14 @@ import { cn } from "@/utils/style";
 export default function SideBar() {
   const activeId = useActiveSection(["link1", "link2"]);
 
+  const handleClick = (hash: string) => () => {
+    const target = document.querySelector(hash);
+
+    if (!target) return;
+
+    target.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <div
       className={cn(
@@ -12,24 +20,26 @@ export default function SideBar() {
         "max-lg:hidden",
       )}
     >
-      <a
+      <button
         className={cn(
-          "text-slate-300 hover:underline",
+          "text-start text-slate-300 hover:underline",
           (activeId === "link1" || activeId === "") && "font-bold text-black",
         )}
-        href="#link1"
+        onClick={handleClick("#link1")}
+        type="button"
       >
         더 빠른 트렌드와 더 나은 서비스
-      </a>
-      <a
+      </button>
+      <button
         className={cn(
-          "text-slate-300 hover:underline",
+          "text-start text-slate-300 hover:underline",
           activeId === "link2" && "font-bold text-black",
         )}
-        href="#link2"
+        onClick={handleClick("#link2")}
+        type="button"
       >
         다양한 느낌과 다양한 상품
-      </a>
+      </button>
     </div>
   );
 }
