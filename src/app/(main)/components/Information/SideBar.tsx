@@ -19,7 +19,7 @@ export default function SideBar() {
         )}
         href="#link1"
       >
-        Link1
+        더 빠른 트렌드와 더 나은 서비스
       </a>
       <a
         className={cn(
@@ -28,7 +28,7 @@ export default function SideBar() {
         )}
         href="#link2"
       >
-        Link2
+        다양한 느낌과 다양한 상품
       </a>
     </div>
   );

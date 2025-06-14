@@ -18,7 +18,6 @@ export default function Information() {
       )}
     >
       <SideBar />
-
       <div className="flex flex-1 flex-col gap-[120px]">
         <InfoBox
           description="한국의 트렌디 패션, 뷰티, 라이프스타일을 더욱 빠르게 즐길 수 있는 글로벌 감성 플렛폼."
@@ -27,6 +26,7 @@ export default function Information() {
             "https://res.cloudinary.com/dumqfde1s/image/upload/v1745226609/samples/balloons.jpg",
             "https://res.cloudinary.com/dumqfde1s/image/upload/v1745226602/samples/landscapes/girl-urban-view.jpg",
           ]}
+          linkId="link1"
           subTitle={`"서울의 느낌을 그대로"`}
           title="더 빠른 트렌드와 더 나은 서비스"
         />
@@ -37,6 +37,7 @@ export default function Information() {
             "https://res.cloudinary.com/dumqfde1s/image/upload/v1745226609/samples/balloons.jpg",
             "https://res.cloudinary.com/dumqfde1s/image/upload/v1745226602/samples/landscapes/girl-urban-view.jpg",
           ]}
+          linkId="link2"
           subTitle={`“나에게 필요한, 나를 위한 상품들”`}
           title="다양한 느낌과 다양한 상품"
         />

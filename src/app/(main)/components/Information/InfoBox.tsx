@@ -8,12 +8,14 @@ interface InfoBoxProps {
   subTitle: string;
   description: string;
   images?: string[];
+  linkId?: string;
 }
 
 export default function InfoBox({
   title,
   subTitle,
   description,
+  linkId,
   images = [],
 }: InfoBoxProps) {
   const id = useId();
@@ -24,7 +26,7 @@ export default function InfoBox({
         "flex scroll-mt-[120px] flex-col gap-[60px]",
         "max-md:gap-[30px]",
       )}
-      id="link1"
+      id={linkId}
     >
       <div className="flex flex-col gap-[20px]">
         <h2 className="text-[40px] max-lg:text-[36px] max-md:text-[30px]">

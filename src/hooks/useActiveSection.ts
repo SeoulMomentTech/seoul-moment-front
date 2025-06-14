@@ -19,7 +19,7 @@ export function useActiveSection(ids: string[], threshold = 0.5) {
         }
       },
       {
-        rootMargin: "0px 0px -70% 0px", // 하단 margin을 줄여 하단 섹션 조기 감지 방지
+        rootMargin: "0px 0px -50% 0px", // 하단 margin을 줄여 하단 섹션 조기 감지 방지
         threshold,
       },
     );
