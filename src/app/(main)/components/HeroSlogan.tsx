@@ -19,7 +19,7 @@ const CONTENTS = {
 };
 
 const styleMap = {
-  base: "overflow-hidden relative h-[150px] rounded-lg opacity-100 transition-all duration-700 max-xl:h-[80px] max-md:h-[45px] max-md:hidden ",
+  base: "overflow-hidden relative h-[150px] rounded-lg transition-all duration-700 max-xl:h-[80px] max-md:h-[45px] max-md:hidden ",
   word: "inline-block max-md:text-[50px] max-sm:text-[40px]",
   // hover: "max-xl:hover:w-[160px] hover:w-[300px]",
 };
@@ -70,23 +70,23 @@ export default function HeroSlogan({ className }: Props) {
               <span className={styleMap.word} key={`word1-${w}-${idx + 1}`}>
                 {w}
               </span>
-              {idx === 1 && (
-                <div
-                  className={cn(
-                    "video-container",
-                    styleMap.base,
-                    idx === 1 && "w-0 scale-0",
+              <div
+                className={cn(
+                  "video-container",
+                  styleMap.base,
+                  "unvisible w-0 scale-0",
+                  idx === 1 &&
                     active === "make" &&
-                      "mx-1 w-[150px] scale-100 bg-amber-200 hover:opacity-100 max-xl:w-[80px] max-xl:hover:w-[160px] max-md:w-[45px]",
-                  )}
-                >
-                  <Image
-                    alt=""
-                    fill
-                    src="https://res.cloudinary.com/dumqfde1s/image/upload/v1745226611/samples/dessert-on-a-plate.jpg"
-                  />
-                </div>
-              )}
+                    "visible mx-1 w-[150px] scale-100 opacity-100 hover:opacity-100 max-xl:w-[80px] max-xl:hover:w-[160px] max-md:w-[45px]",
+                )}
+              >
+                <Image
+                  alt=""
+                  fill
+                  priority
+                  src="https://res.cloudinary.com/dumqfde1s/image/upload/v1745226611/samples/dessert-on-a-plate.jpg"
+                />
+              </div>
             </div>
           ))}
           <span className={cn("w-[42px]", "max-md:w-[20px]")} />
@@ -99,23 +99,23 @@ export default function HeroSlogan({ className }: Props) {
               <span className={styleMap.word} key={`word2-${w}-${idx + 1}`}>
                 {w}
               </span>
-              {idx === 1 && (
-                <div
-                  className={cn(
-                    "video-container",
-                    styleMap.base,
-                    idx === 1 && "w-0 scale-0",
+              <div
+                className={cn(
+                  "video-container",
+                  styleMap.base,
+                  "unvisible w-0 scale-0",
+                  idx === 1 &&
                     active === "your" &&
-                      "mx-1 w-[150px] scale-100 bg-amber-200 hover:opacity-100 max-xl:w-[80px] max-xl:hover:w-[160px] max-md:w-[45px]",
-                  )}
-                >
-                  <Image
-                    alt=""
-                    fill
-                    src="https://res.cloudinary.com/dumqfde1s/image/upload/v1745226610/samples/man-on-a-escalator.jpg"
-                  />
-                </div>
-              )}
+                    "visible mx-1 w-[150px] scale-100 opacity-100 hover:opacity-100 max-xl:w-[80px] max-xl:hover:w-[160px] max-md:w-[45px]",
+                )}
+              >
+                <Image
+                  alt=""
+                  fill
+                  priority
+                  src="https://res.cloudinary.com/dumqfde1s/image/upload/v1745226610/samples/man-on-a-escalator.jpg"
+                />
+              </div>
             </div>
           ))}
         </div>
@@ -137,23 +137,23 @@ export default function HeroSlogan({ className }: Props) {
               onMouseEnter={handleMouseEnter("here")}
             >
               <span className={styleMap.word}>{w}</span>
-              {idx === 1 && (
-                <div
-                  className={cn(
-                    "video-container",
-                    styleMap.base,
-                    idx === 1 && "w-0 scale-0",
+              <div
+                className={cn(
+                  "video-container",
+                  styleMap.base,
+                  "unvisible w-0 scale-0",
+                  idx === 1 &&
                     active === "here" &&
-                      "mx-1 w-[150px] scale-100 bg-amber-200 hover:opacity-100 max-xl:w-[80px] max-xl:hover:w-[160px] max-md:w-[45px]",
-                  )}
-                >
-                  <Image
-                    alt=""
-                    fill
-                    src="https://res.cloudinary.com/dumqfde1s/image/upload/v1745226610/samples/chair-and-coffee-table.jpg"
-                  />
-                </div>
-              )}
+                    "visible mx-1 w-[150px] scale-100 opacity-100 hover:opacity-100 max-xl:w-[80px] max-xl:hover:w-[160px] max-md:w-[45px]",
+                )}
+              >
+                <Image
+                  alt=""
+                  fill
+                  priority
+                  src="https://res.cloudinary.com/dumqfde1s/image/upload/v1745226610/samples/chair-and-coffee-table.jpg"
+                />
+              </div>
             </div>
           ))}
         </div>
