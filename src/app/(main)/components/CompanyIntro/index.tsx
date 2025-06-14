@@ -56,6 +56,7 @@ function CompanyIntro() {
           )}
           fill
           key={`${id}-${img}-company-intro`}
+          objectFit="cover"
           src={img}
         />
       ))}
