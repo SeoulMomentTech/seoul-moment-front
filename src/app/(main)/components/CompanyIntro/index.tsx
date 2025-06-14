@@ -1,7 +1,8 @@
 "use client";
 
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import { useRef } from "react";
+import Image from "next/image";
+import { useCallback, useId, useRef, useState } from "react";
 import { EffectFade, Autoplay } from "swiper/modules";
 import type { SwiperRef } from "swiper/react";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -14,8 +15,16 @@ import "swiper/css/effect-fade";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
+const images = [
+  "https://res.cloudinary.com/dumqfde1s/image/upload/v1745226610/samples/look-up.jpg",
+  "https://res.cloudinary.com/dumqfde1s/image/upload/v1745226609/samples/balloons.jpg",
+  "https://res.cloudinary.com/dumqfde1s/image/upload/v1745226602/samples/landscapes/girl-urban-view.jpg",
+];
+
 function CompanyIntro() {
+  const id = useId();
   const swiperRef = useRef<SwiperRef | null>(null);
+  const [activeIdx, setActiveIdx] = useState(0);
 
   const handleNext = () => {
     if (!swiperRef.current) return;
@@ -28,13 +37,32 @@ function CompanyIntro() {
     if (!swiperRef.current) return;
 
     const { swiper } = swiperRef.current;
+
     swiper.slidePrev();
   };
 
+  const handleSlideChange = useCallback((swiper: SwiperRef["swiper"]) => {
+    setActiveIdx(swiper.realIndex);
+  }, []);
+
   return (
-    <Section className={cn("company-intro bg-black", "h-auto")}>
+    <Section className={cn("company-intro relative bg-black", "h-auto")}>
+      {images.map((img, idx) => (
+        <Image
+          alt=""
+          className={cn(
+            "scale-90 opacity-0 transition-all duration-500",
+            idx === activeIdx && "scale-100 opacity-45",
+          )}
+          fill
+          key={`${id}-${img}-company-intro`}
+          src={img}
+        />
+      ))}
+
       <div
         className={cn(
+          "relative",
           "mx-auto max-w-[1200px] py-[100px]",
           "max-xl:px-[20px] max-sm:py-[50px]",
         )}
@@ -60,6 +88,7 @@ function CompanyIntro() {
           effect="fade"
           loop
           modules={[EffectFade, Autoplay]}
+          onSlideChange={handleSlideChange}
           ref={swiperRef}
           slidesPerView="auto"
           spaceBetween={30}
